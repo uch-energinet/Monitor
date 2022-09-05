@@ -1,0 +1,31 @@
+<html>
+    <head>
+        {% block head %}
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/base.css') }}">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+        <title>{% block title %}{% endblock %} - Monitor</title>
+        {% endblock %}
+    </head>
+    <body>
+        <div id="main">
+            <div id="menu">
+                <div class="group">
+                    <div class="title">Dashboards</div>
+                    <a href="#" class="item">Økonomi</a>
+                    <a href="#" class="item">Energi</a>
+                </div>
+                <div class="group-divider"></div>
+                <div class="group">
+                    <div class="title">Datakilder</div>
+                    <a href="#" class="item">Data</a>
+                </div>
+            </div>
+            <div id="site">
+                <div id="title">{{ self.title() }}</div>
+                <div id="content">{% block content %}{% endblock %}</div>
+            </div>
+        </div>
+        {% block foot %}{% endblock %}
+    </body>
+</html>

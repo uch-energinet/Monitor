@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/data.css') }}">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="main">
+            <div id="menu">
+                <div class="group">
+                    <div class="header">Dashboards ▾</div>
+                    <a href="#" class="item">Økonomi</a>
+                    <a href="#" class="item">Energi</a>
+                </div>
+                <div class="group">
+                    <div class="header">Datakilder ▾</div>
+                    <a href="#" class="item">Data</a>
+                </div>
+            </div>
+            <div id="content">
+                <div class="title">Processes</div>
+                <div class="list">
+                    <div class="task">
+                        <a href="#" class="header">
+                            <img class="status" src="{{ url_for('static', filename='images/data/approved.png') }}">
+                            <div class="name">Download data</div>
+                            <div class="hidden-symbol">+</div>
+                        </a>
+                        <div class="content">
+                            <div class="description">
+                                Download latest data at link.
+                            </div>
+                            <div class="process">
+                            </div>
+                            <a href="#" class="do">Run</a>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <a href="#" class="header">
+                            <img class="status" src="{{ url_for('static', filename='images/data/pending.png') }}">
+                            <div class="name">Download data</div>
+                        </a>
+                        <div class="content">
+                            <div class="description">
+                                Fetch weather data
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script>$get_data_url = "{{ url_for('data.load_data', task_id=1) }}"</script>
+    <script src="{{ url_for('static', filename='js/data.js') }}"></script>
+    </body>
+</html>

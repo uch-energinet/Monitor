@@ -1,0 +1,28 @@
+<html>
+    <head>
+        {% block head %}
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/base.css') }}">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <title>{% block title %}{% endblock %} - Monitor</title>
+        {% endblock %}
+    </head>
+    <body>
+        <div id="main">
+            <div id="menu">
+                {% for section in sections %}
+                <div class="group">
+                    <div class="title">{{ section.menu_name }}</div>
+                    {% for page in section.pages %}
+                    <a href="#" class="item">{{ page.menu_name }}</a>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+            <div id="content">
+                <div id="title">{{ self.title() }}</div>
+                <div id="content">{% block content %}{% endblock %}</div>
+            </div>
+        </div>
+        {% block foot %}{% endblock %}
+    </body>
+</html>

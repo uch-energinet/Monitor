@@ -1,0 +1,29 @@
+<html>
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <input type="number" name="examplevar" />
+          <table>
+            <tr>
+              <td><input type="text" name="color_1[]" /></td>
+              <td><input type="text" name="color_2[]" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" name="color_1[]" /></td>
+              <td><input type="text" name="color_2[]" /></td>
+            </tr>
+          <table>
+          <button>Submit</button>
+        <script>
+        $("button").on("click", function () {
+          var inputs = $("input")
+          var values = [];
+          inputs.each(function () {
+            values.push($(this).val())
+          });
+          console.log(values)
+        });
+      </script>
+    </body>
+</html>

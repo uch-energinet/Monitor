@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/data-sources.css') }}">
+{% endblock %}
+
+{% block title %}Data Sources{% endblock %}
+
+{% block foot %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/data-sources.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div id="list">
+    <div class="task hidden">
+        <a href="#" class="header">
+            <img class="status" src="{{ url_for('static', filename='images/data/approved.png') }}">
+            <div class="name">Download data</div>
+            <div class="hidden-symbol">+</div>
+        </a>
+        <div class="content">
+            <div class="description">
+                Download latest data at link.
+            </div>
+            <div class="process">
+            </div>
+            <a href="#" class="do">Run</a>
+        </div>
+    </div>
+    <div class="task hidden">
+        <a href="#" class="header">
+            <img class="status" src="{{ url_for('static', filename='images/data/pending.png') }}">
+            <div class="name">Download data</div>
+        </a>
+        <div class="content">
+            <div class="description">
+                Fetch weather data
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

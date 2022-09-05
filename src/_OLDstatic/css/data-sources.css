@@ -1,0 +1,73 @@
+#list {
+	border: 1px solid lightgrey;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.task {
+	border-top: 1px solid lightgrey; 
+	/* border-top: none; */
+	overflow: hidden;
+}
+.task:first-child {
+	border-top: none;
+}
+/*.task:first-child {
+	border-top: 1px solid lightgrey;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.task:last-child {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+*/
+.task .header {
+	align-items: center;
+	display: flex;
+	height: 50px;
+	padding: 0px 20px 0px 20px;
+	text-decoration: none;
+	color: inherit;
+}
+.task .header:hover {
+	background-color: whitesmoke;
+}
+.task .header .status {
+	margin-right: 10px;
+	width: 14px;
+}
+.task .header .name {
+	font-weight: bold;
+}
+.task .header .hidden-symbol {
+	margin-left: auto;
+	font-size: 20px;
+}
+.task .content {
+	margin: 10px 20px 10px 20px;
+	overflow: auto;
+}
+.task.hidden .content {
+	display: none;
+}
+.task .process {
+    background-color: whitesmoke;
+    border-radius: 2px;
+    border: 1px solid lightgrey;
+    margin-top: 10px;
+    padding: 10px;
+    font-family: monospace;
+}
+.task .do {
+	background-color: dodgerblue;
+	border-radius: 2px;
+	color: white;
+	display: block;
+	float: left;
+	font-weight: bold;
+	line-height: 38px;
+	margin-top: 20px;
+	padding-left: 10px;
+    padding-right: 10px;
+	text-decoration: none;
+}
